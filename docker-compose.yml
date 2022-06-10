@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  docker-nginx-cors:
+    image: ictus4u/nginx-cors
+    restart: unless-stopped
+    build: .
+    environment:
+      - BACKEND_API_URL=https://example.com
+    ports:
+      - "8090:80"
